@@ -14,7 +14,7 @@ defmodule PluralsightTweet.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger, :quantum],
+      extra_applications: [:logger, :quantum, :extwitter],
       mod: {PluralsightTweet.Application, []}
     ]
   end
@@ -24,7 +24,9 @@ defmodule PluralsightTweet.MixProject do
     [
       {:credo, "~> 1.0"},
       {:quantum, "~> 2.3"},
-      {:timex, "~> 3.4"}
+      {:timex, "~> 3.4"},
+      {:extwitter, "~> 0.9.3"},
+      {:oauther, "~> 1.1"}
     ]
   end
 end
