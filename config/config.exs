@@ -28,3 +28,8 @@ use Mix.Config
 # here (which is why it is important to import them last).
 #
 #     import_config "#{Mix.env()}.exs"
+
+config :pluralsight_tweet, PluralsightTweet.Scheduler,
+jobs: [
+    {"* * * * *", {PluralsightTweet.FileReader, :get_strings_to_tweet, ["./lib/pluralsight_tweet/sample.txt"]}},
+]

@@ -6,10 +6,12 @@ defmodule PluralsightTweet.Application do
   use Application
 
   def start(_type, _args) do
+    import Supervisor.Spec, warn: false
     # List all child processes to be supervised
     children = [
       # Starts a worker by calling: PluralsightTweet.Worker.start_link(arg)
       # {PluralsightTweet.Worker, arg},
+      worker(PluralsightTweet.Scheduler, [])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
