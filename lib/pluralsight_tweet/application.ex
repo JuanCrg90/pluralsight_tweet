@@ -11,6 +11,7 @@ defmodule PluralsightTweet.Application do
     children = [
       # Starts a worker by calling: PluralsightTweet.Worker.start_link(arg)
       # {PluralsightTweet.Worker, arg},
+      worker(PluralsightTweet.TweetServer, []),
       worker(PluralsightTweet.Scheduler, [])
     ]
 

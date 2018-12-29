@@ -1,4 +1,4 @@
-defmodule Pluralsight.Tweet do
+defmodule PluralsightTweet.Tweet do
   def send(str) do
     ExTwitter.configure(:process, [consumer_key: System.get_env("TWITTER_CONSUMER_KEY"),
    consumer_secret: System.get_env("TWITTER_CONSUMER_SECRET"),
